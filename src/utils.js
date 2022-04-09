@@ -218,10 +218,10 @@ const addEmployee = () => {
 
 const getStartMenu = () => {
     
-        console.log('             ==========================')
-        console.log("           Let's build an employee Database")
-        console.log('            Follow the prompts and enjoy!')
-        console.log('             ==========================')
+        console.log('             ===(:================:)===')
+        console.log("           Let's build an employee contact-list")
+        console.log('            please follow the prompts')
+        console.log('             ===(:================:)===')
    
     inquirer
         .prompt({
