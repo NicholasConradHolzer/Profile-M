@@ -50,7 +50,7 @@ console.log(data)
     
     <header class="container mx-auto px-10 bg-red-700 flex justify-center">
     <body>
-        <h1 class="text-white text-lg ">Super Cool Employee Data Base</h1>
+        <h1 class="text-white text-lg ">Profile-M</h1>
     </header>
             <p>${html.join("")}</p>
     </body>
