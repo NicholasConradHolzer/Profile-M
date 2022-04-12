@@ -1,41 +1,49 @@
-const Manager = require("../lib/Manager")
+const employeeDatabase = (data) => {
+    //build html database profiles for employees with schemas specified by job-title.
+    let html = data.map (emp => {
 
-const employeeData = (data) => {
-    let html = data.map (employee => {
-        if(employee.getJob() === "Manager") {
+    //Manager Profile
+        if(emp.getJob() === "Manager") {
             return `
-            <div class="box-content h-32 w-32 p-4 border-4">
-            <h2>Name: ${employee.name} </h2>
-                <p>Title: ${employee.getJob()}</p>
-				<p>Id: ${employee.id}</p>
-				<p>Email: ${employee.email}</p>
-				<p>Office: ${employee.office}</p>
+            <div>
+            <h2>Name: ${emp.name} </h2>
+                <p>Title: ${emp.getJob()}</p>
+				<p>Id: ${emp.id}</p>
+				<p>Email: ${emp.email}</p>
+				<p>Office: ${emp.office}</p>
             </div>
+            <br/>
             `
-        } else if ( employee.getJob() === "Engineer") {
+    //Engineer Profile
+        } else if ( emp.getJob() === "Engineer") {
             return `
-            <div class="box-content h-32 w-32 p-4 border-4">
-            <h2>Name: ${employee.name}</h2>
-                <p>Title: ${employee.getJob()}</p>
-				<p>Id: ${employee.id}</p>
-				<p>Email: ${employee.email}</p>
-				<p>GitHub: https://github.com/${employee.username}</p>
+            <div>
+            <h2>Name: ${emp.name}</h2>
+                <p>Title: ${emp.getJob()}</p>
+				<p>Id: ${emp.id}</p>
+				<p>Email: ${emp.email}</p>
+				<p>GitHub: https://github.com/${emp.gitname}</p>
             </div>
+            <br/>
             `
-        } else if ( employee.getJob() === "Intern") {
+    //Intern Profile
+        } else if ( emp.getJob() === "Intern") {
             return `
-            <div class="box-content h-32 w-32 p-4 border-4">
-            <h2>Name: ${employee.name}</h2>
-                <p>Title: ${employee.getJob()}</p>
-				<p>Id: ${employee.id}</p>
-				<p>Email: ${employee.email}</p>
-				<p>School:${employee.school}</p>
+            <div>
+            <h2>Name: ${emp.name}</h2>
+                <p>Title: ${emp.getJob()}</p>
+				<p>Id: ${emp.id}</p>
+				<p>Email: ${emp.email}</p>
+				<p>School:${emp.school}</p>
             </div>
+            <br/>
             `
         }
     })
-console.log(data)
 
+console.log(data) /*Present the profiles in command line to QA check*/
+
+//establish default html for "front-end databasing"
     return`
     <!DOCTYPE html>
     <html lang="en">
@@ -43,19 +51,19 @@ console.log(data)
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <script src="https://cdn.tailwindcss.com"></script>
+        <title>Profile-M</title>
     </head>
+
     <body>
-    
-    <header class="container mx-auto px-10 bg-red-700 flex justify-center">
-    <body>
-        <h1 class="text-white text-lg ">Profile-M</h1>
+    <header>
+        <h1>Profile-M:</h1>
+        <h2>&lt;html&gt; Database</h2>
     </header>
+    <br/>
             <p>${html.join("")}</p>
     </body>
     </html>
         `
 }
 
-module.exports= employeeData
+module.exports = employeeDatabase
