@@ -17,6 +17,7 @@ const path = require ('path')
 let empData = []
 
 
+//MANAGER object queries:
 const addMan = () =>{
     inq.prompt([
         {
@@ -75,7 +76,7 @@ const addMan = () =>{
 }
 
 
-
+//ENGINEER object queries:
 const addEngi = () =>{
     inq.prompt([
         {
@@ -134,6 +135,8 @@ const addEngi = () =>{
     })          
 }
 
+
+//INTERN object queries:
 const addInt = () =>{
     inq.prompt([
         {
@@ -190,6 +193,7 @@ const addInt = () =>{
         addEmp()
     })          
 }
+
 
 
 //write objects to html database to save employee-info roster
