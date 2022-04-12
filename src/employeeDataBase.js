@@ -56,8 +56,8 @@ console.log(data) /*Present the profiles in command line to QA check*/
 
     <body>
     <header>
-        <h1>Profile-M:</h1>
-        <h2>&lt;html&gt; Database</h2>
+        <h1>Profile-M</h1>
+        <h2>&lt;html&gt; Database:</h2>
     </header>
     <br/>
             <p>${html.join("")}</p>

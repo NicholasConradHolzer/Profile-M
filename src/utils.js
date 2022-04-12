@@ -227,7 +227,7 @@ const addEmp = () => {
                     addInt()
                     return "Intern"
 
-                case "Done":
+                case "Done (Make Data-Base)":
                     genDB()
                     process.exit()
             }
