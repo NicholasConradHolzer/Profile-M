@@ -213,7 +213,7 @@ const addEmp = () => {
             type:"list",
             message:"What is the employee's job title?",
             name:"choice",
-            choices: ["Manager", "Engineer", "Intern", "Done"],
+            choices: ["Manager", "Engineer", "Intern", "Done (Make Data-Base)"],
         })
 
          .then(({choice}) => {
