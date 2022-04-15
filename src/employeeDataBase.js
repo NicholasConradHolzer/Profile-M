@@ -1,42 +1,39 @@
-const employeeDatabase = (data) => {
+const empDb = (data) => {
     //build html database profiles for employees with schemas specified by job-title.
-    let html = data.map (emp => {
+    let html = data.map (plug => {
 
     //Manager Profile
-        if(emp.getJob() === "Manager") {
+        if (plug.getJob() === "Manager") {
             return `
-            <div>
-            <h2>Name: ${emp.name} </h2>
-                <p>Title: ${emp.getJob()}</p>
-				<p>Id: ${emp.id}</p>
-				<p>Email: ${emp.email}</p>
-				<p>Office: ${emp.office}</p>
+            <div id="manCard" class="empCard">
+            <h2>Name: ${plug.name} </h2>
+                <p>Title: ${plug.getJob()}</p>
+				<p>Id: ${plug.id}</p>
+				<p>Email: ${plug.email}</p>
+				<p>Office: ${plug.office}</p>
             </div>
-            <br/>
             `
     //Engineer Profile
-        } else if ( emp.getJob() === "Engineer") {
+        } else if ( plug.getJob() === "Engineer") {
             return `
-            <div>
-            <h2>Name: ${emp.name}</h2>
-                <p>Title: ${emp.getJob()}</p>
-				<p>Id: ${emp.id}</p>
-				<p>Email: ${emp.email}</p>
-				<p>GitHub: https://github.com/${emp.gitname}</p>
+            <div id="engiCard" class="empCard">
+            <h2>Name: ${plug.name}</h2>
+                <p>Title: ${plug.getJob()}</p>
+				<p>Id: ${plug.id}</p>
+				<p>Email: ${plug.email}</p>
+				<p>GitHub: https://github.com/${plug.gitname}</p>
             </div>
-            <br/>
             `
     //Intern Profile
-        } else if ( emp.getJob() === "Intern") {
+        } else if ( plug.getJob() === "Intern") {
             return `
-            <div>
-            <h2>Name: ${emp.name}</h2>
-                <p>Title: ${emp.getJob()}</p>
-				<p>Id: ${emp.id}</p>
-				<p>Email: ${emp.email}</p>
-				<p>School:${emp.school}</p>
+            <div id="intCard" class="empCard">
+            <h2>Name: ${plug.name}</h2>
+                <p>Title: ${plug.getJob()}</p>
+				<p>Id: ${plug.id}</p>
+				<p>Email: ${plug.email}</p>
+				<p>School:${plug.school}</p>
             </div>
-            <br/>
             `
         }
     })
@@ -59,11 +56,11 @@ console.log(data) /*Present the profiles in command line to QA check*/
         <h1>Profile-M</h1>
         <h2>&lt;html&gt; Database:</h2>
     </header>
-    <br/>
+        <div id="
             <p>${html.join("")}</p>
     </body>
     </html>
         `
 }
 
-module.exports = employeeDatabase
+module.exports = empDb

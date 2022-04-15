@@ -2,7 +2,7 @@
 //file is called on to start program; however questions and output logic
 //redirected to the "utils.js" file in the "src" folder.
 
-const { start } = require('./src/utils.js')
+const start = require('./src/utils')
 
 const runTB = () => {
     start()
