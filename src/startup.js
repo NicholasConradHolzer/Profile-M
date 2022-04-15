@@ -1,6 +1,6 @@
 //pull in inquirer package to provide command line question-answer logic
-const inq = require ('inquirer');
-const addEmp = require('../lib/prompts/employeePrompts');
+const inq = require ('inquirer')
+const addEmp = require('./employeePrompts')
 
 
 //write objects to html database to save employee-info roster
@@ -13,25 +13,26 @@ const start = () => {
             type:"list",
             message:"Profile-M",
             name:"start",
-            choices: ["START", "VIEW", "quit"],
+            choices: ['START', /*"VIEW",*/ "quit"],
         })
     
         .then(
-            ({choice}) => {
-            switch (choice) {
+            ({start}) => {
+                console.log(start)
+            switch (start) {
     //Yes initiates adding of employee based on answers provided to object.
-                case "START": {
-                    addEmp;
-                    return "Starting Builder";
-                }
+                case 'START': 
+                    addEmp();
+                    // return "Starting Builder"
+                
     //Open Html page:
-                case "VIEW": {
+                // case "VIEW": {
                     
-                }
+                // }
     //Default and negative option have same result on cl due to being functionally congruent.
                 case "quit": {
                     console.log("Restart Program when you're ready")
-                break;
+                // break;
                 }
                 // default: {
                 //     console.log("Restart Program when you're ready")

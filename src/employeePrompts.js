@@ -1,22 +1,23 @@
 const inq = require ('inquirer');
 
-const addMan = require ('./managerPrompts');
-const addEngi = require ('./engineerPrompts');
-const addInt = require ('./internPrompts');
+const addMan = require ('../lib/prompts/managerPrompts');
+const addEngi = require ('../lib/prompts/engineerPrompts');
+const addInt = require ('../lib/prompts/internPrompts');
 
-const genDB = require ('../../src/comp');
+const genDB = require ('./comp');
 
 const addEmp = () => { 
-    inq.prompt(
+
+    inq.prompt([
         {
             type:"list",
             message:"What is the employee's job title?",
             name:"choice",
             choices: ["Manager", "Engineer", "Intern", "Done (Make Data-Base)"],
-        })
+        }])
 
          .then(({choice}) => {
-
+            console.log(choice)
              switch (choice) {
                 case "Manager":
                     addMan()
@@ -32,11 +33,11 @@ const addEmp = () => {
 
                 case "Done (Make Data-Base)":
                     genDB()
+                    
                     process.exit()
             }
         })
      
 }
-
 
 module.exports = addEmp;

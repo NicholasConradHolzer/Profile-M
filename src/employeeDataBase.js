@@ -1,28 +1,48 @@
 
-const manResp = require('../lib/response/manresp');
-const engiResp = require('../lib/response/engiresp');
-const intResp = require('../lib/response/intresp');
+
 
 const empDb = (data) => {
-    //build html database profiles for employees with schemas specified by job-title.
     let html = data.map (plug => {
 
     //Manager Profile
         if (plug.getJob() === "Manager") {
-            return manResp(plug);
+            // /*return*/ manResp(plug);
+            return `
+            <div id="manCard" class="empCard">
+            <h2>Name: ${plug.name} </h2>
+                <p>Title: ${plug.getJob()}</p>
+				<p>Id: ${plug.id}</p>
+				<p>Email: ${plug.email}</p>
+				<p>Office: ${plug.office}</p>
+            </div>
+    `
             
     //Engineer Profile
         } else if ( plug.getJob() === "Engineer") {
-            return engiResp(plug);
-
+            // /*return*/ engiResp(plug);
+            return  `
+            <div id="engiCard" class="empCard">
+            <h2>Name: ${plug.name}</h2>
+                <p>Title: ${plug.getJob()}</p>
+				<p>Id: ${plug.id}</p>
+				<p>Email: ${plug.email}</p>
+				<p>GitHub: https://github.com/${plug.gitname}</p>
+            </div>
+    `
     //Intern Profile
         } else if ( plug.getJob() === "Intern") {
-            return intResp(plug);
-   
+            // /*return*/ intResp(plug);
+            return `
+            <div id="intCard" class="empCard">
+            <h2>Name: ${plug.name}</h2>
+                <p>Title: ${plug.getJob()}</p>
+				<p>Id: ${plug.id}</p>
+				<p>Email: ${plug.email}</p>
+				<p>School:${plug.school}</p>
+            </div>
+        `
         }
-    })
-
-console.log(data) /*Present the profiles in command line to QA check*/
+    }) /*Present the profiles in command line to QA check*/
 
 //establish default html for "front-end databasing"
     return`
