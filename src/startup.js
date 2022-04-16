@@ -18,7 +18,6 @@ const start = () => {
     
         .then(
             ({start}) => {
-                console.log(start)
             switch (start) {
     //Yes initiates adding of employee based on answers provided to object.
                 case 'START': 

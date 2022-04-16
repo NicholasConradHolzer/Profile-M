@@ -33,7 +33,7 @@ const addEmp = () => {
 
                 case "Done (Make Data-Base)":
                     genDB()
-                    
+                    console.log(genDB())
                     process.exit()
             }
         })
